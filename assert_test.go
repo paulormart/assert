@@ -16,6 +16,7 @@ func TestAll(t *testing.T){
 		actual: "Hello World",
 		result: true,
 	},}
+	//TODO add more tests
 
 	for _, test := range tests {
 		if res := assert.Equal(t, test.expected, test.actual); res != test.result {
