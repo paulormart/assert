@@ -15,7 +15,12 @@ func TestAll(t *testing.T){
 		expected: "Hello World",
 		actual: "Hello World",
 		result: true,
-	},}
+	},
+	{
+		expected: nil,
+		actual: nil,
+		result: true,
+	}}
 	//TODO add more tests
 
 	for _, test := range tests {
