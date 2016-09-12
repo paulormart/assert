@@ -5,6 +5,10 @@ import (
 	"assert"
 )
 
+type User struct {
+	name 	string
+}
+
 func TestAll(t *testing.T){
 	// Table tests
 	var tests = []struct{
@@ -19,6 +23,13 @@ func TestAll(t *testing.T){
 	{
 		expected: nil,
 		actual: nil,
+		result: true,
+	},
+	{
+		expected: func()*User{
+			return &User{}
+		}(),
+		actual: &User{},
 		result: true,
 	}}
 	//TODO add more tests
