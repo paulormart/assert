@@ -3,13 +3,12 @@
 package assert
 
 import (
-	"reflect"
 	"fmt"
+	"reflect"
 	"runtime"
 	"strings"
 	"testing"
 )
-
 
 // getTestFile identifies the test file that has been called highlighting the line
 // Note: we assume a go test file always ends as _test.go
@@ -22,7 +21,7 @@ func getTestFile() string {
 		}
 
 		if x := strings.LastIndex(file, "/"); x != -1 {
-			if name := file[x:]; strings.Contains(name, "_test.go"){
+			if name := file[x:]; strings.Contains(name, "_test.go") {
 				return fmt.Sprintf(".%s:%d", name, line)
 			}
 		}
@@ -41,10 +40,13 @@ func Fail(t *testing.T, expected, actual interface{}) bool {
 // Equal asserts deep equal for two objects
 func Equal(t *testing.T, expected, actual interface{}) bool {
 
+	if expected == nil || actual == nil {
+		return expected == actual
+	}
+
 	if !reflect.DeepEqual(expected, actual) {
 		return Fail(t, expected, actual)
 	}
+
 	return true
 }
-
-

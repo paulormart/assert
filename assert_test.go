@@ -1,8 +1,9 @@
 package assert_test
 
 import (
-	"assert"
 	"testing"
+
+	"github.com/paulormart/assert"
 )
 
 type FakeStruct struct {
