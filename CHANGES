@@ -1,0 +1,13 @@
+Version v0.1.0
+ - migrate to go modules
+ - equality nil
+ - Merge branch 'add-tests'
+ - added struct to tests
+ - tests struct
+ - tests nil
+ - add identifies the test caller file and print it
+ - removed TestingT struct
+ - add more tests
+ - initial commit
+ - initial commit
+
